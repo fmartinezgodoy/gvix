@@ -1,4 +1,5 @@
 from fuzzywuzzy import process
+from resources.apps.wakeup import waker
 from resources.apps.off import off
 from resources.apps.beep import beep
 from resources.apps.loader import loader
@@ -16,6 +17,7 @@ class apps():
 		self.master = loader()["settings"]["master"]
 		self.slave = loader()["settings"]["slave"]
 
+		self.waker = waker()
 		self.recognizer = recognizer()
 		self.speaker = speaker()
 		self.browser = browser()
@@ -34,7 +36,14 @@ class apps():
 		}
 
 	def off(self, query):
-		off.off()
+		off()
+	
+	def wakeup(self):
+		query = self.waker.wake()
+		if query[0]:
+			cat = self.waker.checkcat(query[1], self.commands.keys())
+			if cat[0]:
+				self.commands[cat[1]](query[1])
 
 	# hacer sonido
 	def beep(self):
@@ -45,20 +54,10 @@ class apps():
 		query = self.recognizer.hear()
 		return query
 
-	def categorize(self, query):
-		phrase = ""
-		for words in query:		
-			phrase += words
-			phrase += " "
-		category = process.extractOne(phrase, list(self.commands.keys()))
-		return category[0]
-
 	# tts [what]
 	def say(self, what):
 		self.speaker.say(what)
-
-
-
+		
 	# abrir en el navegador
 	def browse(self, query):
 		self.browser.browse(query)

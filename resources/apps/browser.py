@@ -28,13 +28,13 @@ class browser():
         for keys in self.urls.keys():
             if keys in query:
                 self.open_url(self.urls[keys])
-                self.__speaker.say("Abriendo {}, señor".format(keys))
+                self.__speaker.say("Abriendo {}".format(keys))
                 return True
         return False
 
     # función que pregunta qué página se desea abrir
     def ask_browse(self):
-        self.__speaker.say("Qué página desea abrir, señor?")
+        self.__speaker.say("Qué página desea abrir")
         return self.__recognizer.hear()
 
     def yn_question(self):
@@ -64,7 +64,7 @@ class browser():
                 else:
                     # si la etapa anterior no funcionó pregunta si debe buscar 
                     # en google los términos escuchados
-                    self.__speaker.say("No existe u erre ele asignada a ese término, debería buscarlo en google?, señor")
+                    self.__speaker.say("No existe u erre ele asignada a ese término, debería buscarlo en google?")
                     # si la respuesta es si, genero una frase con las palabras
                     # escuchadas en la etapa inmediatamente anterior, 
                     # si es una sola palabra, se genera una frase que
@@ -76,7 +76,7 @@ class browser():
                     # si la respuesta es no, pregunto si desea repetir la 
                     # página a abrir o si desea salir
                     else:
-                        self.__speaker.say("Desea repetir la página?, señor")
+                        self.__speaker.say("Desea repetir la página?")
                         if self.yn_question():
                             pass
                         else:
