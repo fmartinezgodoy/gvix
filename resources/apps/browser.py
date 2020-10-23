@@ -1,17 +1,17 @@
 import webbrowser
-import json
 
 from resources.apps.loader import loader
-from resources.apps.recognizer import recognizer
-from resources.apps.speaker import speaker
-from resources.apps.gsearch import gsearch
+from resources.apps.recognizer import Recognizer
+from resources.apps.speaker import Speaker
+from resources.apps.gsearch import Gsearch
 
-class browser():
+
+class Browser:
     def __init__(self):
         # instancias de dependencias
-        self.__recognizer = recognizer()
-        self.__speaker = speaker()
-        self.__gsearch = gsearch()
+        self.__recognizer = Recognizer()
+        self.__speaker = Speaker()
+        self.__gsearch = Gsearch()
         self.urls = loader()["urls"]
 
     # función abrir en el navegador

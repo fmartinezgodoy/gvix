@@ -3,7 +3,8 @@ from pynput.keyboard import Key, Controller
 
 keyboard = Controller()
 
-class discord():
+
+class Discord:
 	def __init__(self):
 		self.__disc_commands = {
 			"micro" : "p",

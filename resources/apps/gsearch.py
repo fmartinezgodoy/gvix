@@ -1,15 +1,16 @@
 import webbrowser
 
 from resources.apps.loader import loader
-from resources.apps.speaker import speaker
-from resources.apps.recognizer import recognizer
+from resources.apps.speaker import Speaker
+from resources.apps.recognizer import Recognizer
 
-class gsearch():
+
+class Gsearch:
 
 	def __init__(self):
 		self.__slave = loader()["settings"]["slave"]
-		self.__speaker = speaker()
-		self.__recognizer = recognizer()
+		self.__speaker = Speaker()
+		self.__recognizer = Recognizer()
 
 	# buqueda de [this] en google
 	def search(self, this):

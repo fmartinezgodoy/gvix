@@ -1,7 +1,8 @@
 import os
 from resources.apps.loader import loader
 
-class launcher():
+
+class Launcher:
 	def __init__(self):
 		self.__programs = loader()["programs"]
 

@@ -1,17 +1,17 @@
-from fuzzywuzzy import process
 from resources.apps.wakeup import Waker
 from resources.apps.off import off
 from resources.apps.beep import beep
 from resources.apps.loader import loader
 from resources.apps.recognizer import Recognizer
-from resources.apps.speaker import speaker
-from resources.apps.browser import browser
-from resources.apps.gsearch import gsearch
-from resources.apps.launcher import launcher
-from resources.apps.wiki import wiki
-from resources.apps.discord import discord
+from resources.apps.speaker import Speaker
+from resources.apps.browser import Browser
+from resources.apps.gsearch import Gsearch
+from resources.apps.launcher import Launcher
+from resources.apps.wiki import Wiki
+from resources.apps.discord import Discord
 
-class apps():
+
+class Apps:
 	# instancias y parámetros
 	def __init__(self):
 		self.master = loader()["settings"]["master"]
@@ -19,20 +19,20 @@ class apps():
 
 		self.waker = Waker()
 		self.recognizer = Recognizer()
-		self.speaker = speaker()
-		self.browser = browser()
-		self.gsearch = gsearch()
-		self.launcher = launcher()
-		self.wiki = wiki()
-		self.discord = discord()
+		self.speaker = Speaker()
+		self.browser = Browser()
+		self.gsearch = Gsearch()
+		self.launcher = Launcher()
+		self.wiki = Wiki()
+		self.discord = Discord()
 
 		self.commands = {
-			"abrir" : self.browse,
-			"buscar en google" : self.search,
-			"iniciar" : self.launch,
-			"wikipedia" : self.wikipedia,
-			"salir" : self.off,
-			"discord" : self.discord_commands
+			"abrir": self.browse,
+			"buscar en google": self.search,
+			"iniciar": self.launch,
+			"wikipedia": self.wikipedia,
+			"salir": self.off,
+			"discord": self.discord_commands
 		}
 
 	def off(self, query):

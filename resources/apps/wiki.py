@@ -1,16 +1,17 @@
 import wikipedia
 
-from resources.apps.speaker import speaker
-from resources.apps.recognizer import recognizer
-from resources.apps.browser import browser
+from resources.apps.speaker import Speaker
+from resources.apps.recognizer import Recognizer
+from resources.apps.browser import Browser
 
 wikipedia.set_lang("es")
 
-class wiki():
+
+class Wiki:
     def __init__(self):
-        self.speaker = speaker()
-        self.recognizer = recognizer()
-        self.browser = browser()
+        self.speaker = Speaker()
+        self.recognizer = Recognizer()
+        self.browser = Browser()
 
     # función que ejecuta la busqueda en sí
     def wikisearch(self, what):

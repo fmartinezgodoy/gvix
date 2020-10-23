@@ -1,9 +1,8 @@
-from resources.main import apps
+from resources.main import Apps
 
-gvix = apps()
+gvix = Apps()
 gvix.say("Bienvenido {}, soy {}, su asistente virtual".format(gvix.master, gvix.slave))
 
 while True:
 	print("..")
-
 	gvix.wakeup()

@@ -1,6 +1,7 @@
 import pyttsx3
 
-class speaker():
+
+class Speaker:
 	# instancia y parámetros encapsulados para tts
 	def __init__(self):
 		self.__tts = pyttsx3.init()
@@ -8,5 +9,5 @@ class speaker():
 		self.__tts.setProperty("volume", 1.0)
 
 	def say(self, what):
-	    self.__tts.say(what)
-	    self.__tts.runAndWait()
+		self.__tts.say(what)
+		self.__tts.runAndWait()
