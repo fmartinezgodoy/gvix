@@ -3,7 +3,8 @@ from fuzzywuzzy import process, fuzz
 
 from resources.apps.loader import loader
 
-class waker():
+
+class Waker:
     def __init__(self):
         # instancias de speech recognition
         self.mic = speech_recognition.Microphone()
@@ -34,11 +35,11 @@ class waker():
         # escucha e interpreta lo que escuchó
         with self.mic as source:
             try:
-                audio = self.recognizer.listen(source, timeout = 1)
+                audio = self.recognizer.listen(source, timeout=1)
             except:
                 audio = None
         try:
-            audio2text = str(self.recognizer.recognize_google(audio, language = "es_ES")).lower()
+            audio2text = str(self.recognizer.recognize_google(audio, language="es_ES")).lower()
             return self.checkforslave(audio2text.split())
 
         except:

@@ -1,6 +1,9 @@
 import speech_recognition
 
-class recognizer(object):
+from resources.apps.beep import beep
+
+
+class Recognizer(object):
 
     def __init__(self):
         # instancias para micrófono y reconocedor
@@ -13,6 +16,7 @@ class recognizer(object):
     def hear(self):
         with self.__mic as source:
             try:
+                beep()
                 audio = self.__recognizer.listen(source, timeout = 3)
             except:
                 audio = None

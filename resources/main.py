@@ -1,9 +1,9 @@
 from fuzzywuzzy import process
-from resources.apps.wakeup import waker
+from resources.apps.wakeup import Waker
 from resources.apps.off import off
 from resources.apps.beep import beep
 from resources.apps.loader import loader
-from resources.apps.recognizer import recognizer
+from resources.apps.recognizer import Recognizer
 from resources.apps.speaker import speaker
 from resources.apps.browser import browser
 from resources.apps.gsearch import gsearch
@@ -17,8 +17,8 @@ class apps():
 		self.master = loader()["settings"]["master"]
 		self.slave = loader()["settings"]["slave"]
 
-		self.waker = waker()
-		self.recognizer = recognizer()
+		self.waker = Waker()
+		self.recognizer = Recognizer()
 		self.speaker = speaker()
 		self.browser = browser()
 		self.gsearch = gsearch()
