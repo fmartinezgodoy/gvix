@@ -39,11 +39,11 @@ class Apps:
 		off()
 	
 	def wakeup(self):
-		query = self.waker.wake()
-		if query[0]:
-			cat = self.waker.checkcat(query[1], self.commands.keys())
-			if cat[0]:
-				self.commands[cat[1]](query[1])
+		(check, query) = self.waker.wake()
+		if check:
+			(check, command) = self.waker.checkcat(query, self.commands.keys())
+			if check:
+				self.commands[command](query)
 
 	# hacer sonido
 	def beep(self):

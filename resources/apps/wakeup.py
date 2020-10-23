@@ -16,20 +16,20 @@ class Waker:
 
     def checkforslave(self, query):
         for words in query:
-            if fuzz.ratio(self.slave, words) > 70:
+            if fuzz.ratio(words, self.slave) > 70:
                 query.remove(words)
                 return [True, query]
-        return [False]
+        return [False, query]
 
     def checkcat(self, query, commands):
         phrase = ""
         for words in query:
             phrase += words + " "
-        cat = process.extractOne(phrase, commands)
-        if cat[1] > 60:
-            return [True, cat[0]]
+        (word, ratio) = process.extractOne(phrase, commands)
+        if ratio > 60:
+            return [True, word]
         else:
-            return [False]
+            return [False, word]
 
     def wake(self):
         # escucha e interpreta lo que escuchó
