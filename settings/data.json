@@ -24,5 +24,10 @@
         "hotmail" : "https://outlook.live.com/mail/0/inbox",
         "gmail" : "https://mail.google.com/mail/u/0/#inbox",
         "opgg" : "https://las.op.gg/champion/statistics"
-        }
+        },
+
+    "searchs" : {
+        "google" : "https://www.google.com/search?q=",
+        "youtube" : "https://www.youtube.com/results?search_query="
+    }
 }

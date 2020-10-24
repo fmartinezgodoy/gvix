@@ -7,8 +7,8 @@ keyboard = Controller()
 class Discord:
 	def __init__(self):
 		self.__disc_commands = {
-			"micro" : "p",
-			"auri" : "o"
+			"micro": "p",
+			"auri": "o"
 		}
 		# self.keyboard = Controller()
 
@@ -19,10 +19,9 @@ class Discord:
 
 	def do(self, query):
 		# función que activa el bind ctrl + [key]
+		phrase = ""
 		for words in query:
-			phrase = ""
-			for words in query:		
-				phrase += words
-				phrase += " "
-			category = process.extractOne(phrase, list(self.__disc_commands.keys()))[0]
-			self.ctrl_hotkey(self.__disc_commands[category])
+			phrase += words
+			phrase += " "
+		category = process.extractOne(phrase, list(self.__disc_commands.keys()))[0]
+		self.ctrl_hotkey(self.__disc_commands[category])

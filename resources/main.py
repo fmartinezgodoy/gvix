@@ -5,7 +5,8 @@ from resources.apps.loader import loader
 from resources.apps.recognizer import Recognizer
 from resources.apps.speaker import Speaker
 from resources.apps.browser import Browser
-from resources.apps.gsearch import Gsearch
+#from resources.apps.gsearch import Gsearch
+from resources.apps.websearch import Wsearch
 from resources.apps.launcher import Launcher
 from resources.apps.wiki import Wiki
 from resources.apps.discord import Discord
@@ -21,14 +22,15 @@ class Apps:
 		self.recognizer = Recognizer()
 		self.speaker = Speaker()
 		self.browser = Browser()
-		self.gsearch = Gsearch()
+		#self.gsearch = Gsearch()
+		self.wsearch = Wsearch()
 		self.launcher = Launcher()
 		self.wiki = Wiki()
 		self.discord = Discord()
 
 		self.commands = {
 			"abrir": self.browse,
-			"buscar en google": self.search,
+			"buscar": self.search,
 			"iniciar": self.launch,
 			"wikipedia": self.wikipedia,
 			"salir": self.off,
@@ -65,7 +67,8 @@ class Apps:
 
 	# buscar en google
 	def search(self, query):
-		self.gsearch.searcher(query)
+		#self.gsearch.searcher(query)
+		self.wsearch.search(query)
 
 	# iniciar programa
 	def launch(self, query):
