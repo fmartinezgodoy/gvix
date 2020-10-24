@@ -41,6 +41,5 @@ class Waker:
         try:
             audio2text = str(self.recognizer.recognize_google(audio, language="es_ES")).lower()
             return self.checkforslave(audio2text.split())
-
         except:
-            return [False]
+            return [False, None]

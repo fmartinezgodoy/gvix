@@ -1,7 +1,7 @@
-from resources.apps.speaker import speaker
+from resources.apps.speaker import Speaker
 from resources.apps.recognizer import Recognizer
 
-speaker = speaker()
+speaker = Speaker()
 recognizer = Recognizer()
 
 

@@ -40,6 +40,7 @@ class Apps:
 	
 	def wakeup(self):
 		(check, query) = self.waker.wake()
+		print(query)
 		if check:
 			(check, command) = self.waker.checkcat(query, self.commands.keys())
 			if check:
