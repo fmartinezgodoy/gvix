@@ -3,7 +3,7 @@ import webbrowser
 from resources.apps.loader import loader
 from resources.apps.recognizer import Recognizer
 from resources.apps.speaker import Speaker
-from resources.apps.gsearch import Gsearch
+from resources.apps.websearch import Wsearch
 
 
 class Browser:
@@ -11,7 +11,7 @@ class Browser:
         # instancias de dependencias
         self.__recognizer = Recognizer()
         self.__speaker = Speaker()
-        self.__gsearch = Gsearch()
+        self.__wsearch = Wsearch()
         self.urls = loader()["urls"]
 
     # función abrir en el navegador
@@ -71,7 +71,7 @@ class Browser:
                     # contenga solo esta palabra, esto no afecta a la 
                     # búsqueda en sí
                     if self.yn_question():
-                        self.__gsearch.search(self.__gsearch.phraser(query))
+                        self.__wsearch.search(query)
                         break
                     # si la respuesta es no, pregunto si desea repetir la 
                     # página a abrir o si desea salir
