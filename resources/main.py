@@ -46,7 +46,7 @@ class Apps:
 			if check:
 				self.commands[command](query)
 
-	# hacer sonido
+	# hacer sonido 
 	def beep(self):
 		beep()
 
